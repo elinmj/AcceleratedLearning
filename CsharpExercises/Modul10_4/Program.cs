@@ -62,14 +62,24 @@ namespace Modul10_4
 
         }
 
+        private static string CalculateMean()
+        {
+            int total = 0;
+
+            foreach (var item in numbers)
+            {
+                int summa = item + total;
+                total = summa;
+            }
+
+            decimal mean = total / numbers.Count;
+        }
+
         private static string CalculateMedian()
         {
             throw new NotImplementedException();
         }
 
-        private static string CalculateMean()
-        {
-            throw new NotImplementedException();
-        }
+        // Extrauppgiften 1 är inte klar
     }
 }
