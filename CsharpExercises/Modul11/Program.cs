@@ -10,7 +10,10 @@ namespace Modul11
         {
             var list = new List<int> { 5, 11, 89, 3, 10, 4 };
 
-            Console.WriteLine(string.Join(",", NumberHigherThanFive(list)));
+            //StarifyList(list);
+            Console.WriteLine(string.Join(",", StarifyList(list)));
+
+            //Console.WriteLine(string.Join(",", NumberHigherThanFive(list)));
 
             //foreach (int x in result)
             //{
@@ -24,29 +27,44 @@ namespace Modul11
             //Console.WriteLine(avg);
         }
 
-        private static List<int> NumberHigherThanFive(List<int> list)
+        private static List<string> StarifyList(List<int> list)
         {
-            List<int> numbersHigherThanFive = list.Where(x => x > 5).ToList();
-            return numbersHigherThanFive;
-
-
-            //List<int> numbersHigherThanFive = new List<int>();            //Utan Linq
+            //List<string> stars = new List<string>();          //Utan Linq
 
             //foreach (var item in list)
             //{
-            //    if (item > 5)
-            //    {
-            //        numbersHigherThanFive.Add(item);
-            //    }
+            //    stars.Add("* " + item.ToString());
             //}
 
-            //foreach (var item in numbersHigherThanFive)
-            //{
-            //    Console.WriteLine(item);
-            //}
+            //return stars;
 
-            //return numbersHigherThanFive;
+            List<string> stars = list.Select(x => "*" + x + "*").ToList();          //Linq
+            return stars;
         }
+
+        //private static List<int> NumberHigherThanFive(List<int> list)
+        //{
+        //    List<int> numbersHigherThanFive = list.Where(x => x > 5).ToList();
+        //    return numbersHigherThanFive;
+
+
+        //List<int> numbersHigherThanFive = new List<int>();            //Utan Linq
+
+        //foreach (var item in list)
+        //{
+        //    if (item > 5)
+        //    {
+        //        numbersHigherThanFive.Add(item);
+        //    }
+        //}
+
+        //foreach (var item in numbersHigherThanFive)
+        //{
+        //    Console.WriteLine(item);
+        //}
+
+        //return numbersHigherThanFive;
+        //}
 
         //private static int Sum(List<int> list)
         //{
