@@ -15,11 +15,12 @@ namespace BeforeCheckpoint2
 
             foreach (var item in sep1)
             {
-                Person newPerson = new Person();
                 string[] sepArray = item.Split(',');
-                newPerson.Name = sepArray[0];
-                newPerson.YearOfBirth = int.Parse(sepArray[1]);
-                newPerson.Sex = sepArray[2];
+                Person newPerson = new Person(sepArray[0], int.Parse(sepArray[1]), sepArray[2]);
+
+                //newPerson.Name = sepArray[0];
+                //newPerson.YearOfBirth = int.Parse(sepArray[1]);
+                //newPerson.Sex = sepArray[2];
                 personList.Add(newPerson);
             }
 

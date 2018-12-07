@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checkpoint02", "Checkpoint02\Checkpoint02.csproj", "{256E6DCF-5DFF-49C3-B188-9F5F2ED41D7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{256E6DCF-5DFF-49C3-B188-9F5F2ED41D7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{256E6DCF-5DFF-49C3-B188-9F5F2ED41D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{256E6DCF-5DFF-49C3-B188-9F5F2ED41D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{256E6DCF-5DFF-49C3-B188-9F5F2ED41D7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70257D8E-1100-4744-A4E1-AA3A368420DB}
+	EndGlobalSection
+EndGlobal
