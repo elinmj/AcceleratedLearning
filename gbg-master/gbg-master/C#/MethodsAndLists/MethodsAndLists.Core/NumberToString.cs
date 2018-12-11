@@ -10,6 +10,11 @@ namespace MethodsAndLists.Core
     {
         public string Triangle(int height)
         {
+            if (height < 0)
+            {
+                throw new ArgumentException();
+            }
+
             string triangle = "";
 
             for (int j = 1; j <= height; j++)
@@ -31,12 +36,47 @@ namespace MethodsAndLists.Core
 
         public string Triangle(int height, char symbol)
         {
-            throw new NotImplementedException();
+            if (height < 0)
+            {
+                throw new ArgumentException();
+            }
+
+            string triangle = "";
+
+            for (int j = 1; j <= height; j++)
+            {
+                if (j > 1)
+                {
+                    triangle += "\n";
+                }
+
+
+                triangle += new string(symbol, j);
+            }
+
+            return triangle;
         }
 
         public string TriangleReversed(int height)
         {
-            throw new NotImplementedException();
+            if (height < 0)
+            {
+                throw new ArgumentException();
+            }
+
+            string triangle = "";
+
+            for (int j = 1; j <= height; height--)
+            {
+                triangle += new string('*', height);
+
+                if (height > 1)
+                {
+                    triangle += "\n";
+                }
+            }
+
+            return triangle;
         }
     }
 }

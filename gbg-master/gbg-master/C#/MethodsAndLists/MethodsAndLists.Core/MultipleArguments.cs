@@ -43,7 +43,35 @@ namespace MethodsAndLists.Core
 
         public int ComputeSequence(int toNumber, ComputeMethod sum)
         {
-            throw new NotImplementedException();
+            if (toNumber <= 0)
+            {
+                throw new ArgumentException();
+            }
+
+            if (sum == ComputeMethod.Sum)
+            {
+                int total = 1;
+
+                for (int i = 2; i <= toNumber; i++)
+                {
+                    int summa = total + i;
+                    total = summa;
+                }
+
+                return total;
+            }
+            else
+            {
+                int total = 1;
+
+                for (int i = 2; i <= toNumber; i++)
+                {
+                    int summa = total * i;
+                    total = summa;
+                }
+
+                return total;
+            }
         }
 
         public List<string> NearbyElements(int position, List<string> list)
