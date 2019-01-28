@@ -10,34 +10,60 @@ namespace WebApiLab.Controllers
     public class WebApi1Controller : Controller
     {
 
-        [Route("GetPlanet")]
-        public IActionResult GetPlanet()
+        //[Route("GetPlanet")]
+        //public IActionResult GetPlanet()
+        //{
+
+        //    string formContent = "";
+        //    using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
+        //    {
+        //        formContent = reader.ReadToEndAsync().Result;
+        //    }
+
+        //    // Du behöver göra "Planet"-klassen och metoden "ParsePlanet"
+        //    Planet planet = ParsePlanetGet(formContent);
+
+        //    //return Ok("Söker i databasen efter planeter med namn " + <%= Request.QueryString("Planet") %> + " och storlek " + <%= Request.QueryString("Size") %>);
+        //}
+
+        [HttpGet("GetPlanet2")]
+        public IActionResult GetPlanet2(Planet planet)
         {
-            string formContent = "";
-            using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
-            {
-                formContent = reader.ReadToEndAsync().Result;
-            }
-
-            // Du behöver göra "Planet"-klassen och metoden "ParsePlanet"
-            Planet planet = ParsePlanet(formContent);
-
-            return Ok("Söker i databasen efter planeter med namn " + planet.Name + " och storlek " + planet.Size);
+            return Ok("Söker i databasen efter planeter med namn " + planet.Name +" och storlek " + planet.Size );
         }
 
 
-        [Route("AddPlanet")]
-        public IActionResult AddPlanet()
+        private Planet ParsePlanetGet(string formContent)
         {
-            string formContent = "";
-            using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
-            {
-                formContent = reader.ReadToEndAsync().Result;
-            }
+            Planet planet = new Planet();
 
-            // Du behöver göra "Planet"-klassen och metoden "ParsePlanet"
-            Planet planet = ParsePlanet(formContent);
+            string[] form = formContent.Split('&');
 
+            planet.Name = form[0].Remove(0, 8);
+
+            planet.Size = int.Parse(form[1].Remove(0, 5));
+
+            return planet;
+        }
+
+        //[Route("AddPlanet")]
+        //public IActionResult AddPlanet()
+        //{
+        //    string formContent = "";
+        //    using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
+        //    {
+        //        formContent = reader.ReadToEndAsync().Result;
+        //    }
+
+        //    // Du behöver göra "Planet"-klassen och metoden "ParsePlanet"
+        //    Planet planet = ParsePlanet(formContent);
+
+        //    return Ok("Ny planet " + planet.Name + " skapad med storleken " + planet.Size);
+        //}
+
+        [Route("AddPlanet2")]
+        public IActionResult AddPlanet2(Planet planet)
+        {
             return Ok("Ny planet " + planet.Name + " skapad med storleken " + planet.Size);
         }
 
