@@ -1,0 +1,10 @@
+<style>
+	//h1 {font-family: arial}
+	body, h1 {font-family: arial}
+	table,th,td {
+		border: 1px solid black;
+		border-collapse: collapse;
+		padding: 10px;
+	}
+	img  {width: 50%}
+</style>
