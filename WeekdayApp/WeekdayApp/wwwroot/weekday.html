@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>weekday</title>
+</head>
+<body>
+    <input id="language" name="Language"/>
+
+    <button onclick="weekday()">Ange språkkod för att få nuvarande dags namn</button>
+    Ska vi söka: <input type="checkbox" name="Search" checked="checked" value="true" /> <br />
+
+    <div id="result" style="color:green"></div>
+    <div id="error" style="color:red"></div>
+</body>
+</html>
+
+<script>
+    async function weekday() {
+
+        let language = document.getElementById("language").value;
+
+        let response = await fetch(`/api/weekday?language=${language}`)
+
+        if (response.status === 200) {
+            let result = await response.text();
+            document.getElementById("result").innerText = result;
+            document.getElementById("error").innerText = "";
+        }
+        else if (response.status === 400) { 
+            let error = await response.text();
+            document.getElementById("error").innerText = error;
+            document.getElementById("result").innerText = "";
+        }
+        else {
+            alert(`Något gick snett!`);
+        }
+    }
+
+</script>

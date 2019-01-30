@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>squareroot</title>
+</head>
+<body>
+    <input id="number" />
+
+    <button onclick="squareRoot()">Roten ur</button>
+    <div id="result" style="color:green"></div>
+    <div id="error" style="color:red"></div>
+</body>
+</html>
+
+<script>
+
+    
+    async function squareRoot() {
+        let number = document.getElementById("number").value;
+        //alert(`Du angav ${number}`)
+
+        //let result = document.getElementById("result").innerText = `Du angav ${number}`;
+
+        //let error = document.getElementById("error");
+
+        let response = await fetch(`/api/squareroot?number=${number}`)
+
+        if (response.status === 200) {
+            
+            let result = await response.json();
+            document.getElementById("result").innerText = result;
+            document.getElementById("error").innerText = "";
+
+            //alert(`Det gick bra!`);
+            
+        }
+        else if (response.status === 400){
+            let error = await response.text();
+            document.getElementById("error").innerText = error;
+            document.getElementById("result").innerText = "";
+
+        }
+        else
+            alert(`Något gick snett!`);
+    }
+
+</script>

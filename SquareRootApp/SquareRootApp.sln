@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareRootApp", "SquareRootApp\SquareRootApp.csproj", "{67AABF17-DCE7-41EB-B4E7-F8B608CC9E60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67AABF17-DCE7-41EB-B4E7-F8B608CC9E60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67AABF17-DCE7-41EB-B4E7-F8B608CC9E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67AABF17-DCE7-41EB-B4E7-F8B608CC9E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67AABF17-DCE7-41EB-B4E7-F8B608CC9E60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86E71542-8B2F-4643-8169-BF7E66B7FC7A}
+	EndGlobalSection
+EndGlobal

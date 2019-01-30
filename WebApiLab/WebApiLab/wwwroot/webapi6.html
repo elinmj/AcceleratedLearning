@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>webapi6</title>
+</head>
+<body>
+    <form method="get" action="/webapi6/AddDocument">
+        Title: <input type="text" name="Title" value="Mitt dokument"/><br />
+        Antal sidor: <input type="number" name="Pages" value="25" /><br />
+        Sammanfattning finns: <input type="checkbox" name="Summary" checked="checked" value="true" /> <br />
+        Publiceras: <input type="datetime-local" name="Published" value="2017-11-21T13:20" /><br />
+        Pris: <input type="number" name="Price" value="120.4" /> <br /> 
+        Typ: <br /> 
+        <select name="Type">
+            <option value="PDF">PDF</option>
+            <option value="HTML">HTML</option>
+            <option value="TXT">TXT</option>
+        </select> <br />
+        Taggar: <br />         
+        <select name="TagList" multiple>
+            <option value="Hej">Hej</option>
+            <option value="Hå">Hå</option>
+            <option value="Gå">Gå</option>
+        </select> <br />
+        Betyg: <br />
+        (1)<input type="radio" name="Rating" value="1" />
+        (2)<input type="radio" name="Rating" value="2" />
+        (3)<input type="radio" name="Rating" value="3" checked />
+        (4)<input type="radio" name="Rating" value="4" />
+        (5)<input type="radio" name="Rating" value="5" /> <br />    
+        <button type="submit">Ok</button>
+    </form>
+</body>
+</html>
