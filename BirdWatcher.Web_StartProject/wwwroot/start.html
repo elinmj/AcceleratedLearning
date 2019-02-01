@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>start</title>
+    <link href="/css/main.css" rel="stylesheet" />
+</head>
+<body>
+    <button onclick="recreateDatabase()" id="recreateButton">Recreate database</button>
+
+    <h3>Add Observations</h3>
+    <h6>Date</h6>
+    <input type="datetime-local" id="date" />
+    <h6>Species</h6>
+    <input type="text" id="species"/>
+    <h6>Location</h6>
+    <input type="text" id="location"/>
+    <h6>Notes</h6>
+    <input type="text" id="notes"/>
+    <button onclick="clickAdd()">Add observation</button>
+
+    <h4>Show all observations</h4>
+    <button onclick="clickShowObservations()">Ok</button>
+
+    <div id="obs"></div>
+
+    <br />
+    <div id="bird"></div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
+
+<script>
+
+    let state = {
+        bird: null,
+        date: null,
+        location: null,
+        notes: null
+
+    };
+
+
+    async function clickAdd() {
+
+        state.date = document.getElementById("date").value;
+        state.bird = document.getElementById("species").value;
+        state.location = document.getElementById("location").value;
+        state.notes = document.getElementById("notes").value;
+
+        let response = await fetch("observation", {
+            method: "POST",
+           body: JSON.stringify(
+                {
+                   bird: state.bird,
+                   date: state.date,
+                   location: state.location,
+                   notes: state.notes
+                }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+
+        if (response.status === 200) {
+            state.bird = "";
+            state.date = "";
+            state.location = "";
+            state.notes = "";
+            result = await response.json();
+            console.log("Observation added");
+
+        } else {
+            console.log("Unexpected error", response);
+        }
+
+    }
+
+
+
+
+    async function clickShowObservations() {
+        let result = "";
+
+        let response = await fetch("observation", {
+            method: "GET"
+        });
+
+        if (response.status === 200) {
+            result = await response.json();
+            console.log(result);
+
+        } else {
+            console.error("Unexpected error", response);
+        }
+
+        let html = "<table>";
+        html += `<tr><th>Date</th><th>Species</th><th>Location</th><th>Notes</th></tr>`;
+        for (var i = 0; i < result.length; i++) {
+            html += `<tr>
+                    <td>${result[i].date}</td>
+                    <td>${result[i].bird}</td>
+                    <td>${result[i].location}</td>
+                    <td>${result[i].notes}</td>
+                 </tr>`;
+        } 
+        html += "</table>";
+
+        document.getElementById("obs").innerHTML = html;
+
+        let observationsList = document.getElementById("bird");
+        observationsList.innerHTML = "";
+
+        for (var i = 0; i < result.length; i++) {
+
+            if (i == 0) {
+                let header = document.createElement("P");
+                header.innerHTML = `<h4>Species</h4>`;
+                observationsList.appendChild(header);
+            }
+
+            let observation = document.createElement("P");
+            observation.innerText = result[i].bird;
+            observationsList.appendChild(observation);
+        }
+
+    }
+
+</script>
