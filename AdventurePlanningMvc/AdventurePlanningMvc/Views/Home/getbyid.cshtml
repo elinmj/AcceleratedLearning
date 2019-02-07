@@ -1,0 +1,18 @@
+﻿@model Adventure
+
+<h1 class="w3-jumbo w3-center w3-animate-top">ÄVENTYRET</h1>
+<hr class="w3-border-green" style="margin:auto;width:40%">
+
+<p>Id: @Model.Id</p>
+<p>Namn: @Model.Name</p>
+<p>Beskrivning: @Model.Description</p>
+<p>Typ: @Model.Type</p>
+<p>Plats: <a href="https://www.google.com/maps/search/?api=1&query=@Model.Location" target="_blank">@Model.Location</a> </p>
+<p>Dagar: @Model.Days</p>
+<p>Datum: @Model.Date</p>
+
+<p class="w3-large w3-center">
+    <a asp-controller="Home" asp-action="listall">Tillbaka</a> <br />
+</p>
+
+@*<a href="https://www.google.com/maps/search/?api=1&" + @Model.Location ">*@

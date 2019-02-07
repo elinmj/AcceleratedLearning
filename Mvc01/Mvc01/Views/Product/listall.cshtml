@@ -1,0 +1,35 @@
+﻿@model List<Product>
+
+
+<h3>Alla produkter</h3>
+
+<ul>
+    @foreach (Product x in Model)
+    {
+        <li><a asp-action="getbyid" asp-route-id=@x.Id>@x.Name</a></li>
+
+        //Lista utan TagHelper
+        //<li><a href="/Product/GetById/@x.Id">@x.Name</a></li>
+    }
+</ul>
+
+<form asp-action="getbyid" method="get">
+    <input name="id" />
+    <button type="submit">Ok</button>
+</form>
+
+<h4>Visa produkter</h4>
+
+<form asp-action="getbyid" method="get">
+    <select name="id">
+        <option value="2">Äpple</option>
+        <option value="1">Banan</option>
+    </select>
+
+    <button type="submit">Ok</button>
+</form>
+
+<a asp-controller="Home" asp-action="index">Tillbaka med TagHelper</a>
+
+
+

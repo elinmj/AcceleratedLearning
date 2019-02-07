@@ -1,0 +1,33 @@
+﻿@using AdventurePlanningMvc.ViewModels;
+@model AdventureListVm
+
+<h1 class="w3-jumbo w3-center w3-animate-top">SKAPA</h1>
+<hr class="w3-border-green" style="margin:auto;width:40%">
+<br />
+
+<form class="w3-center" method="post">
+    <label asp-for="Adventure.Name">Namn</label><br />
+    <input asp-for="Adventure.Name" /> <br />
+    <label asp-for="Adventure.Description">Beskrivning</label> <br />
+    <input asp-for="Adventure.Description" /> <br />
+    <label asp-for="Adventure.Type">Typ</label> <br />
+    <select asp-for="Adventure.Type">
+        <option value="Löpning">Löpning</option>
+        <option value="Vandring">Vandring</option>
+        <option value="Cykling">Cykling</option>
+        <option value="Paddling">Paddling</option>
+        <option value="Klättring">Klättring</option>
+        <option value="Skidor">Skidor</option>
+     </select> <br />    
+    <label asp-for="Adventure.Location">Plats</label> <br />
+    <input asp-for="Adventure.Location" /> <br />
+    <label asp-for="Adventure.Days">Dagar</label> <br />
+    <input asp-for="Adventure.Days" /> <br />
+    <label asp-for="Adventure.Date">Datum</label> <br />
+    <input asp-for="Adventure.Date" /> <br />    <br />
+    <button type="submit">Ok</button>
+</form>
+
+<p class="w3-large w3-center">
+    <a asp-controller="Home" asp-action="index">Tillbaka</a> <br />
+</p>

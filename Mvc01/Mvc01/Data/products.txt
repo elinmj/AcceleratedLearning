@@ -1,0 +1,8 @@
+﻿1, Banan, Gul
+2, Äpple, Grön
+3, Fikon, God!
+4, Dadel, Safffftig!
+5, Godis, Gul
+6, Rödbeta, Knögglig
+7, Gulbeta, Rund
+8, Rödbeta, Gulröd

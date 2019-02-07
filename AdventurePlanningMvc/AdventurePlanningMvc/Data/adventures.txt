@@ -1,0 +1,7 @@
+﻿1, Jämtlandstriangeln, En strecka per dag, Löpning, Storulvån, 4, 2019-07-01 09:00:00
+2, Sälenringen, 2-3 mil om dagen, Löpning, Sälen, 4, 2019-09-01 09:00:00
+3, Sandsjöbackaleden, Ca 10 km med buss tsm med Victor, Vandring, Sandsjöbacka, 1, 2019-02-09 10:00:00
+4, Reflexlöpning, Sätta ut reflexer dagen innan, Löpning, Änggårdsbergen, 1, 2019-02-10 18:00:00
+5, Refugevandring, Vandra mellan refuger, Vandring, Chamonix, 3, 2019-07-22 10:00:00
+6, Vertical K, 1000 höjdmeter, Löpning , Chamonix, 1, 2019-07-22 10:00:00
+7, (Tur)skidexpedition, Tåg i Norge och sen skida "hem", Skidor, Oslo, 3, 2019-03-16 10:00:00

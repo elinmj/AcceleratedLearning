@@ -94,16 +94,18 @@
             console.error("Unexpected error", response);
         }
 
+        var sortedResult = result.sort(function (a, b) { return new Date(a.date) - new Date(b.date) });
+
         let html = "<table>";
         html += `<tr><th>Date</th><th>Species</th><th>Location</th><th>Notes</th></tr>`;
-        for (var i = 0; i < result.length; i++) {
+        for (var i = 0; i < sortedResult.length; i++) {
             html += `<tr>
-                    <td>${result[i].date}</td>
-                    <td>${result[i].bird}</td>
-                    <td>${result[i].location}</td>
-                    <td>${result[i].notes}</td>
+                    <td>${sortedResult[i].date}</td>
+                    <td>${sortedResult[i].bird}</td>
+                    <td>${sortedResult[i].location}</td>
+                    <td>${sortedResult[i].notes}</td>
                  </tr>`;
-        } 
+        }
         html += "</table>";
 
         document.getElementById("obs").innerHTML = html;
@@ -111,19 +113,27 @@
         let observationsList = document.getElementById("bird");
         observationsList.innerHTML = "";
 
+        var uniqueResult = [];
         for (var i = 0; i < result.length; i++) {
-
-            if (i == 0) {
-                let header = document.createElement("P");
-                header.innerHTML = `<h4>Species</h4>`;
-                observationsList.appendChild(header);
+            if (uniqueResult.indexOf(result[i].bird) == -1) {
+                uniqueResult.push(result[i].bird)
             }
-
-            let observation = document.createElement("P");
-            observation.innerText = result[i].bird;
-            observationsList.appendChild(observation);
         }
 
+            for (var i = 0; i < uniqueResult.length; i++) {
+
+                if (i == 0) {
+                    let header = document.createElement("P");
+                    header.innerHTML = `<h4>Species</h4>`;
+                    observationsList.appendChild(header);
+                }
+
+                let observation = document.createElement("P");
+                observation.innerText = uniqueResult[i];
+                observationsList.appendChild(observation);
+            }
+
+        
     }
 
 </script>

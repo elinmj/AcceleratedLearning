@@ -1,0 +1,11 @@
+﻿@model Product
+
+<h3>Get by Id</h3>
+
+<p>Id: @Model.Id</p>
+<p>Namn: @Model.Name</p>
+<p>Description: @Model.Description</p>
+
+<a href="/Product/listall">Tillbaka</a>
+<a asp-controller="Product" asp-action="listall">Tillbaka med TagHelper</a>
+
