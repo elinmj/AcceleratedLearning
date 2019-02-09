@@ -1,0 +1,93 @@
+﻿
+<link rel="stylesheet" href="css/plain.css">
+<meta charset="utf-8" />
+<h1 id="rubbe">Rubrik</h1>
+
+<p id="ingress">xxxxxx</p>
+
+<button id="knapp0" onclick="showAlertBox()">Alertruta med onclick</button>
+<button id="knapp1">Alertruta - med addEventListener</button>
+<button id="knapp2">Skriv i consolen</button>
+<button id="knapp3">Skriv i consolen - alternativ</button>
+<button id="knapp4">Ändra rubrikens text</button>
+<button id="knapp5">Sätt rubriken till röd</button>
+
+<script>
+
+    // Skapa en variabel som hänvisar till rubriken "ingress" mha "getElementById"
+    // Använd "innerText" för att skriva "Hello World!" i ingressen
+    let ingress = document.getElementById("ingress");
+    ingress.innerText = "Hello World!";
+
+    // Använd "innerText" för att skriva ut "Halló <b>heimur</b>! i "ingress"
+    // Testa "innerHTML" istället för innerText och se skillnaden
+    ingress.innerHTML = "Halló <b>heimur</b>!";
+
+    // Om användaren trycker på knapp1 => skriv alertruta
+
+    let knapp1 = document.getElementById("knapp1");
+
+    //knapp1.addEventListener("click", () => {
+    //    alert("klick!");
+    //});
+
+    function showAlertBox() {
+        alert("KLICK!");
+    }
+
+    knapp1.addEventListener("click", showAlertBox);
+
+    /*
+      Om användaren trycker på knapp2 => skriv (med två console.log):
+          "Hello Peter what's happening."
+          "I'm gonna need you to go ahead and come in tomorrow"
+    */
+
+    function writeStuffInConsole() {
+        console.log(`Hello Peter what's happening.`);
+        console.log(`I'm gonna need you to go ahead and come in tomorrow`);
+    }
+
+    let knapp2 = document.getElementById("knapp2");
+
+    knapp2.addEventListener("click", writeStuffInConsole);
+
+    // alternativ
+
+    let knapp3 = document.getElementById("knapp3");
+
+    knapp3.addEventListener("click", () => {
+        console.log(`Hello Peter what's happening.`);
+        console.log(`I'm gonna need you to go ahead and come in tomorrow`);
+    });
+
+    // Om användaren trycker på knapp4 => ändra rubriken till "Ny rubrik"
+
+    let knapp4 = document.getElementById("knapp4");
+    let rubbe = document.getElementById("rubbe");
+
+    knapp4.addEventListener("click", () => {
+        rubbe.innerHTML = "Ny rubrik";
+    });
+
+    // Om användaren trycker på knapp5 => byt färg på rubriken till röd
+
+    let knapp5 = document.getElementById("knapp5");
+    knapp5.addEventListener("click", () => {
+        rubbe.style.color = "red";
+        //rubbe.style.fontSize = "300px";
+    });
+
+    // Diverse: olika sätt att skapa metoder
+
+    function testy() {
+        alert('heeeej')
+    }
+    //testy();
+
+    let testy2 = () => alert('heeeej')
+    //testy2();
+
+    let testy3 = () => { alert('a'); alert('b') }
+
+</script>

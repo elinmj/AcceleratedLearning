@@ -1,0 +1,11 @@
+﻿
+# Installera nuget paket
+
+Install-Package -Project EfSamurai.Data Microsoft.EntityFrameworkCore.Tools
+Install-Package -Project EfSamurai.Data Microsoft.EntityFrameworkCore.SqlServer
+
+# Migrering
+
+Add-Migration -StartupProject EfSamurai.Data -Project EfSamurai.Data MyFirstMigration 
+Update-Database -StartupProject EfSamurai.Data -Project EfSamurai.Data 
+Remove-Migration -StartupProject EfSamurai.Data -Project EfSamurai.Data

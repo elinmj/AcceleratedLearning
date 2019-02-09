@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InförCheckpoint09", "InförCheckpoint09\InförCheckpoint09.csproj", "{607C5514-EE28-45E2-9E51-9A1CAA645CB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{607C5514-EE28-45E2-9E51-9A1CAA645CB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{607C5514-EE28-45E2-9E51-9A1CAA645CB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{607C5514-EE28-45E2-9E51-9A1CAA645CB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{607C5514-EE28-45E2-9E51-9A1CAA645CB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E64CD7A5-3FF6-4BD9-8363-02D7F7D92EF0}
+	EndGlobalSection
+EndGlobal

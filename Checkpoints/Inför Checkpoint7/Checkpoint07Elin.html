@@ -1,0 +1,117 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>basic01</title>
+</head>
+<body>
+    <!--LEVEL1
+    <img id="myImage0" src="egg1-closed.png" onclick="next(0)">
+    <img id="myImage1" src="egg1-closed.png" onclick="next(1)">
+    <img id="myImage2" src="egg1-closed.png" onclick="next(2)">-->
+
+    <!--LEVEL 2-->
+    <div id="myImage"></div>
+</body>
+</html>
+<script>
+
+    //LEVEL 2
+    let bildArray = [];
+    let counterArray = [];
+
+    for (var i = 0; i < 3; i++) {
+        let img = document.createElement("img");
+        img.src = "egg1-closed.png";
+        img.onclick = "next()";
+        bildArray.push(img);
+        counterArray.push(0);
+        document.getElementById("myImage").appendChild(img);
+    }
+
+
+
+    function next() {
+
+        //Här vill jag få med ett värde för var i arrayen jag är = i... 
+        //Försökte lägga in en variabel i next men fick inte till det när man adderar till arrayen
+
+
+        //Här kollar jag i countern (för den specifika positionen i arrayen) för att ta reda på vilken bild som ska ändra src
+        if (counterArray[i] == 0) {
+            bildArray[i].src = "egg2-open.png";
+            counterArray[i]++;
+        }
+        else if (counterArray[i] == 1) {
+            bildArray[i].src = "egg3-double.png";
+            counterArray[i]++;
+        }
+        else {
+            bildArray[i].src = "egg1-closed";
+            counterArray[i] = 0;
+
+            //Här vill jag splicea och lägga in ett stängt ägg
+            bildArray[i + 1] = bildArray.splice(i, 0, '<img id="bild" src="egg1-closed.png" onclick="next()">');
+
+        }
+
+        //Här vill jag skriva ut den nya arrayen
+        for (var i = 0; i < bildArray.length; i++) {
+            document.getElementById("myImage").appendChild(bildArray[i]);
+        }
+    }
+
+
+    //LEVEL 1
+    //let a = 0;
+    //let b = 0;
+    //let c = 0;
+
+    //function next(x) {
+        
+    //    let pic;
+
+    //        if (x == 0) {
+    //            if (a == 0) {
+    //                pic = "egg2-open.png"
+    //                a++;
+    //            } else if (a == 1) {
+    //                pic = "egg3-double.png"
+    //                a++
+    //            } else {
+    //                pic = "egg1-closed.png"
+    //                a = 0;
+    //            }
+    //        }
+    //        else if (x == 1) {
+    //            if (b == 0) {
+    //                pic = "egg2-open.png"
+    //                b++;
+    //            } else if (b == 1) {
+    //                pic = "egg3-double.png"
+    //                b++;
+    //            } else {
+    //                pic = "egg1-closed.png"
+    //                b = 0;
+    //            }
+    //        }
+    //        else if (x == 2) {
+    //            if (c == 0) {
+    //                pic = "egg2-open.png"
+    //                c++;
+    //            } else if (c == 1) {
+    //                pic = "egg3-double.png"
+    //                c++;
+    //            } else {
+    //                pic = "egg1-closed.png"
+    //                c = 0; 
+    //            }
+    //        }
+
+    //        document.getElementById(`myImage${x}`).src = pic;
+    //}
+
+</script>
+

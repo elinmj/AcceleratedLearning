@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<!-- Syfte: visa bootstrap tillsammans med egen javascript -->
+<html>
+<head>
+    <title>b6</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <style>
+        h4 {
+            padding-top: 16px;
+            text-align: center;
+            color: #b3b3b3;
+        }
+
+        img {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div>
+            <button onclick="visaThumbnails()">Visa thumbnails</button>
+            <button onclick="laggTillThumbnail()">Lägg till thumbnail</button>
+            <button onclick="laggTillThumbnailAlternativ()">Lägg till thumbnail - Alternativ</button>
+        </div>
+
+        <div>
+            <input id="ruta" />
+            <button onclick="andraStorlek()">Ändra storlek</button>
+        </div>
+
+        <div id="minaThumbnails">
+            <h4>Thumbnails</h4>
+            <img src="img/cat.jpg" class="img-thumbnail" id="katten">
+            <img src="img/cat.jpg" class="img-thumbnail">
+            <img src="img/cat.jpg" class="img-thumbnail">
+        </div>
+
+        <script>
+            let ruta = document.getElementById("ruta");
+            let minaThumbnails = document.getElementById("minaThumbnails");
+            let katten = document.getElementById("katten");
+
+            minaThumbnails.style.display = "none";
+
+            function visaThumbnails() {
+                minaThumbnails.style.display = "block";
+            }
+
+            // Enkelt, men problemet är att "katten" skrivs över och kan inte senare förändras
+            function laggTillThumbnail() {
+                minaThumbnails.innerHTML += `<img src="img/cat.jpg" class="img-thumbnail">`;
+            }
+
+            // Lite jobbigare kod, men fördel är att "katten" är kvar
+            function laggTillThumbnailAlternativ() {
+                let img = document.createElement("img");
+                img.className = "img-thumbnail";
+                img.src = "img/cat.jpg";
+                minaThumbnails.appendChild(img);
+            }
+
+            function andraStorlek() {
+                console.log(katten, parseInt(ruta.value));
+                katten.style.width = parseInt(ruta.value) + "px";
+            }
+
+        </script>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    </div>
+
+</body>
+</html>

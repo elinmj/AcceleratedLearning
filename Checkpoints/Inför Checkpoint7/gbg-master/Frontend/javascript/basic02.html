@@ -1,0 +1,74 @@
+﻿<h1 id="rubbe">Rubrik</h1>
+
+<link rel="stylesheet" href="css/plain.css">
+<meta charset="utf-8"/>
+
+<button id="knapp1">Grön varannan gång</button>
+<button id="knapp2">Ändra knappens storlek</button>
+<button id="knapp3">För musen över mig</button>
+
+<script>
+
+    /*
+
+    Om användaren trycker på knapp1 => byt färg på rubriken till varannan gång grön och svart
+
+    Tips:
+
+        Skapa en variabel som håller koll på om texten ska vara grön eller svart
+
+        För att sätta en ny "styling" på ett element:
+
+            mittElement.style.xxxxxx = .....
+    
+    */
+    
+    let knapp1 = document.getElementById("knapp1");
+    let rubbe = document.getElementById("rubbe");
+    let writeInGreen = false;
+
+    function toggleGreenColor() {
+        writeInGreen = !writeInGreen;
+        if (writeInGreen) {
+            rubbe.style.color = "green";
+        } else {
+            rubbe.style.color = "black";
+        }
+    }
+
+    knapp1.addEventListener("click", toggleGreenColor);
+
+    /*
+        Om användaren trycker på knapp2 => öka "padding" på knappen med 10pixlar
+
+        Tips: skapa variabel som håller koll på paddingen
+    */
+
+    let knapp2 = document.getElementById("knapp2");
+    let padding = 10;
+
+    function paddington() {
+        padding += 10;
+        knapp2.style.padding = `${padding}px`;
+    }
+    knapp2.addEventListener("click", paddington);
+
+    /*
+        Om användaren för musen över knapp7 => sätt färgen till röd (och återställ till svart när användaren för musen förbi knappen)
+        Tips, kolla upp:
+
+            mittElement.addEventListener("mouseover" ... )
+            mittElement.addEventListener("mouseout" ... )
+    */
+
+    let knapp3 = document.getElementById("knapp3");
+
+    knapp3.addEventListener("mouseover", () => {
+        knapp3.style.color = "red";
+    });
+
+    knapp3.addEventListener("mouseout", () => {
+        knapp3.style.color = "black";
+    });
+
+</script>

@@ -1,0 +1,56 @@
+﻿@model InförCheckpoint09.ViewModels.CreateAdventureVm
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Adventure</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Adventure.Name" class="control-label"></label>
+                <input asp-for="Adventure.Name" class="form-control" />
+                <span asp-validation-for="Adventure.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adventure.Description" class="control-label"></label>
+                <input asp-for="Adventure.Description" class="form-control" />
+                <span asp-validation-for="Adventure.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adventure.Days" class="control-label"></label>
+                <input asp-for="Adventure.Days" class="form-control" />
+                <span asp-validation-for="Adventure.Days" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adventure.Date" class="control-label"></label>
+                <input asp-for="Adventure.Date" class="form-control" />
+                <span asp-validation-for="Adventure.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adventure.Diciplin" class="control-label"></label>
+                <select asp-for="Adventure.DiciplinId" class="form-control" asp-items="Model.AllDiciplins"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <select multiple asp-for="Location.Id" class="form-control" asp-items="Model.AllLocations"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

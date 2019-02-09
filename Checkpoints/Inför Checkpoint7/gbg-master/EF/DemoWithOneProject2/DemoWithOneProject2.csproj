@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20180906123256_Regex.cs" />
+    <Compile Remove="Migrations\20180906124830_Fruits.cs" />
+    <Compile Remove="Migrations\20180906125117_FruktKatten.cs" />
+    <Compile Remove="Migrations\20180906125426_Hej.cs" />
+    <Compile Remove="Migrations\20190116144741_Sweetness.cs" />
+    <Compile Remove="Migrations\20190116151317_Apa.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.1" />
+  </ItemGroup>
+
+</Project>
